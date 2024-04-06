@@ -4,10 +4,14 @@ import React from 'react'
 
 const ReviewPage = () => {
   return (
-    <>
-      <h1>All Reviews</h1>
-      <ReviewCard />
-    </>
+    <div className="w-full flex items-start justify-between">
+      <div className="w-[60%]">
+        <ReviewCard />
+      </div>
+      <div className="w-[40%]">
+        Images
+      </div>
+    </div>
   )
 }
 

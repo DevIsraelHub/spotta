@@ -26,6 +26,7 @@ const config = {
         brandInput: "var(--brandInput)",
         brandInputStroke: "var(--brandInputStroke)",
         brandCard: "var(--brandCard)",
+        brandIcon: "var(--brandIcon)",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

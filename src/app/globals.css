@@ -11,6 +11,7 @@
       --brandInput: #F3F7FE;
       --brandInputStroke: #D4DCF1;
       --brandCard: #fdfeff;
+      --brandIcon: #0D2159;
       
       --background: 0 0% 100%;
       --foreground: 222.2 84% 4.9%;
@@ -50,6 +51,8 @@
       --brandInput: #242428;
       --brandInputStroke: #D4DCF1;
       --brandCard: #212122;
+      --brandIcon: #BACAF5;
+
 
       --background: 222.2 84% 4.9%;
       --foreground: 210 40% 98%;

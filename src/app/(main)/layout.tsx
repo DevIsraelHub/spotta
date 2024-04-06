@@ -13,7 +13,7 @@ const layout = ({ children }: Readonly<{
 }>) => {
   return (
     <main className="w-full h-screen mx-auto flex flex-col items-center justify-start">
-      <header className="w-full bg-red-300">
+      <header className="w-full bg-[#F2F6FD] dark:bg-transparent">
         <Navbar />
         <Header />
       </header>

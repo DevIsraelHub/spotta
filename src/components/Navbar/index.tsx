@@ -19,10 +19,11 @@ const Navbar = () => {
         !isLoggedIn && (
 
           <div className="lg:w-1/2 ml-auto lg:ml-0 mr-2 sm:mr-4 lg:mr-0">
-            <Searchbar className="hidden lg:flex " placeholder="Bonny and Clyde Street, Ajao Estate, Lagos" />
-            <Button size="icon" variant="ghost" className="text-brandColor hover:text-brandColor lg:hidden p-2 w-10 h-10 rounded-full">
-              <Search />
-            </Button>
+            <Searchbar
+              inputClassName="bg-brandBg dark:bg-brandInput"
+              className="hidden lg:flex bg-brandBg"
+              placeholder="Bonny and Clyde Street, Ajao Estate, Lagos"
+            />
           </div>
         )
       }

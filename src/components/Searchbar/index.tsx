@@ -2,8 +2,9 @@ import React from 'react'
 import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
 
-const Searchbar = ({ placeholder, className }: {
+const Searchbar = ({ placeholder, className, inputClassName }: {
   className?: string,
+  inputClassName?: string,
   placeholder?: string
 }) => {
 
@@ -15,7 +16,7 @@ const Searchbar = ({ placeholder, className }: {
       <Input
         type="search"
         placeholder={placeholder}
-        className="w-full indent-8 bg-brandInput border-brandInputStroke dark:border-none"
+        className={`w-full indent-8 bg-brandInput border-brandInputStroke dark:border-none ${inputClassName}`}
       />
     </div>
   )
