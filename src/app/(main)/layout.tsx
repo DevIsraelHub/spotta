@@ -17,7 +17,7 @@ const layout = ({ children }: Readonly<{
         <Navbar />
         <Header />
       </header>
-      <section className="w-full py-6 px-4 md:px-6 lg:px-12 max-w-[1300px]">
+      <section className="w-full pb-4 lg:py-6 px-4 md:px-6 lg:px-12 max-w-[1300px]">
         {children}
       </section>
     </main>

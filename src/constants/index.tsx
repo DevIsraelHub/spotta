@@ -79,6 +79,13 @@ export const reviewCards = [
   },
 ]
 
+export const gridImages = [
+  "/images/grid-1.png",
+  "/images/grid-2.png",
+  "/images/grid-3.png",
+  "/images/grid-4.png",
+]
+
 export const places = [
   "All",
   "Schools",

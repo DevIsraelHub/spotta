@@ -43,7 +43,7 @@ const ReviewCard = () => {
           <small className="text-brandIcon">124</small>
         </span>
       </div>
-      <Separator className="my-6 dark:bg-slate-500" />
+      <Separator className="my-6" />
     </div>
   )
 }
