@@ -4,6 +4,7 @@ import {
   AvatarFallback,
   AvatarImage,
 } from "@/components/ui/avatar";
+import { Separator } from "@/components/ui/separator"
 import { MessageSquare, StarIcon, ThumbsDown, ThumbsUp } from "lucide-react";
 
 const ReviewCard = () => {
@@ -42,6 +43,7 @@ const ReviewCard = () => {
           <small className="text-brandIcon">124</small>
         </span>
       </div>
+      <Separator className="my-6 dark:bg-slate-500" />
     </div>
   )
 }
