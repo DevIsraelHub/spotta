@@ -14,7 +14,11 @@ const PlacedCategory = ({ places, selectedPlace, setSelectedPlace }: CategoryPro
   return (
     <div className="flex items-center justify-between gap-x-4 w-full">
       <div
-        className="flex items-center gap-x-2 w-[95%] overflow-hidden px-1 overflow-x-scroll"
+        className="flex items-center gap-x-2 w-[95%] scrollbar-hide overflow-hidden px-1 overflow-x-scroll"
+        style={{
+          scrollbarWidth: "none",
+          msOverflowStyle: "none",
+        }}
       >
         {places.map((place, index) => (
           <Button
