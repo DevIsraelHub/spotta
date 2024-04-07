@@ -1,17 +1,15 @@
 import React from 'react'
 import Logo from "@/components/Logo"
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
 import Searchbar from "@/components/Searchbar"
 import UserButton from "../UserButton"
-import { Search } from "lucide-react"
 import { ModeToggle } from "../ModeToggle"
 
 const Navbar = () => {
   const isLoggedIn = false;
 
   return (
-    <nav className="flex items-center bg-transparent justify-between w-full min-h-[70px] px-4 md:px-6 lg:px-12 max-w-[1400px]">
+    <nav className="flex items-center mx-auto bg-transparent justify-between w-full min-h-[70px] px-4 md:px-6 lg:px-12 max-w-[1400px]">
       <Link href="/" as={"/"}>
         <Logo w="120" h="50" />
       </Link>

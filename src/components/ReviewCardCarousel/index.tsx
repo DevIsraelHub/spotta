@@ -21,7 +21,7 @@ const ReviewCardCarousel = ({ animation = "animate-loop-scroll" }: {
 }) => {
 
   return (
-    <div className="flex flex-col max-h-[90%] overflow-hidden w-full h-full space-y-4">
+    <div className="flex flex-col max-h-[90%] items-end overflow-hidden w-full h-full space-y-4">
       {reviewCards.map((card) => (
         <Card key={card.id} className={`${animation} bg-brandCard border-none w-full h-full xl:w-[280px] xl:h-max`}>
           <CardHeader>
@@ -43,11 +43,14 @@ const ReviewCardCarousel = ({ animation = "animate-loop-scroll" }: {
                   {card.location}
                 </h2>
                 <div className="flex items-center gap-x-[1px] text-brandTextDull">
-                  <StarIcon className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                  <StarIcon className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                  <StarIcon className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                  <StarIcon className="h-4 w-4 fill-gray-300 text-gray-300" />
-                  <StarIcon className="h-4 w-4 fill-gray-300 text-gray-300" />
+                  {Array.from({ length: 5 }).map((_, index) => (
+                    <StarIcon
+                      key={index}
+                      size={20}
+                      fill="currentColor"
+                      className={`h-4 w-4 ${index < card.rating ? "fill-yellow-400 text-yellow-400" : "fill-gray-300 text-gray-300"}`}
+                    />
+                  ))}
                 </div>
               </div>
             </CardTitle>

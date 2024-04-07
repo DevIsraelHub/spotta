@@ -6,15 +6,15 @@ import React from 'react'
 
 const ReviewPage = () => {
   return (
-    <div className="w-full flex flex-col-reverse lg:flex-row items-start justify-between space-x-10 lg:space-x-12">
-      <div className="w-full lg:w-[60%]">
+    <div className="w-full flex flex-col-reverse lg:flex-row items-end lg:items-start justify-between space-x-10">
+      <div className="w-full lg:w-[60%] mr-auto flex items-start flex-col">
         <ReviewCard />
         <Comment />
         {reviewCards.map((review, index) => (
           <ReviewCard key={index} />
         ))}
       </div>
-      <div className="w-full mb-4 lg:w-[40%] lg:grid grid-cols-2 grid-rows-2 gap-4 -ml-auto">
+      <div className="w-full lg:w-[40%] mb-12 grid grid-cols-2 grid-rows-2 gap-4 -ml-auto">
         {
           gridImages.map((image, index) => (
             <div className="relative w-full h-full overflow-hidden group cursor-pointer rounded-lg">

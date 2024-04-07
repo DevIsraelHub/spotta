@@ -4,15 +4,15 @@ import React, { useState } from 'react'
 import { Button } from "../ui/button"
 import { Bookmark, ChevronRight, Share2 } from "lucide-react"
 import { places } from "@/constants"
-import PlacedCategory from "../PlacedCategory"
+import PlaceCategory from "../PlaceCategory"
 import Searchbar from "../Searchbar";
-import Link from "next/link";
 import ReviewModal from "../ReviewModal";
+import Link from "next/link";
 
 const Header = () => {
   const [selectedPlace, setSelectedPlace] = useState(places[0])
   return (
-    <div className="space-y-6 py-6 px-4 md:px-6 lg:px-12 max-w-[1400px] mx-auto">
+    <div className="sticky top-2 space-y-6 py-6 px-4 md:px-6 lg:px-12 max-w-[1400px] mx-auto">
       <div className="lg:hidden h-full w-full">
         <Searchbar
           inputClassName="bg-brandBg dark:bg-brandInput"
@@ -31,16 +31,16 @@ const Header = () => {
             Leave A Review
           </ReviewModal>
           <div className="flex items-center gap-x-3">
-            <Button size="icon" variant="outline" className="border-brandColor">
+            <Button size="icon" variant="outline" className="bg-transparent border-brandColor">
               <Bookmark className="text-brandColor w-4 h-4" />
             </Button>
-            <Button size="icon" variant="outline" className="border-brandColor">
+            <Button size="icon" variant="outline" className="bg-transparent border-brandColor">
               <Share2 className="text-brandColor w-4 h-4" />
             </Button>
           </div>
         </div>
       </div>
-      <PlacedCategory
+      <PlaceCategory
         places={places}
         selectedPlace={selectedPlace}
         setSelectedPlace={setSelectedPlace}
@@ -50,10 +50,10 @@ const Header = () => {
           Leave A Review
         </ReviewModal>
         <div className="flex items-center gap-x-3">
-          <Button size="icon" variant="outline" className="border-brandColor">
+          <Button size="icon" variant="outline" className="bg-transparent border-brandColor">
             <Bookmark className="text-brandColor w-4 h-4" />
           </Button>
-          <Button size="icon" variant="outline" className="border-brandColor">
+          <Button size="icon" variant="outline" className="bg-transparent border-brandColor">
             <Share2 className="text-brandColor w-4 h-4" />
           </Button>
         </div>
