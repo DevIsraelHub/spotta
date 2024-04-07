@@ -50,8 +50,8 @@ const ReviewModal = ({ children, className }: {
             <SelectItem value="system">System</SelectItem>
           </SelectContent>
         </Select>
-        <div className="w-full mb-2 space'">
-          <Label className="mb-3">Rate location</Label>
+        <div className="w-full mb-2 space-y-2">
+          <Label>Rate location</Label>
           <div className="flex items-center gap-x-2 text-brandTextDull">
             <StarIcon className="h-5 w-5 fill-yellow-400/50 text-yellow-400/50 cursor-pointer" />
             <StarIcon className="h-5 w-5 fill-yellow-400/50 text-yellow-400/50 cursor-pointer" />
