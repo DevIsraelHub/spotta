@@ -6,6 +6,8 @@ import { Bookmark, ChevronRight, Share2 } from "lucide-react"
 import { places } from "@/constants"
 import PlacedCategory from "../PlacedCategory"
 import Searchbar from "../Searchbar";
+import Link from "next/link";
+import ReviewModal from "../ReviewModal";
 
 const Header = () => {
   const [selectedPlace, setSelectedPlace] = useState(places[0])
@@ -25,9 +27,9 @@ const Header = () => {
             <b>"450" Reviews</b> (People are raving about the selected location)</p>
         </div>
         <div className="hidden lg:flex items-center justify-between w-full lg:w-max gap-x-3">
-          <Button size="lg" className="uppercase bg-brandColor text-white hover:bg-brandColor hover:opacity-90">
+          <ReviewModal className="uppercase font-medium text-sm px-6 py-3 rounded-md bg-brandColor text-white hover:bg-brandColor hover:opacity-90">
             Leave A Review
-          </Button>
+          </ReviewModal>
           <div className="flex items-center gap-x-3">
             <Button size="icon" variant="outline" className="border-brandColor">
               <Bookmark className="text-brandColor w-4 h-4" />
@@ -44,9 +46,9 @@ const Header = () => {
         setSelectedPlace={setSelectedPlace}
       />
       <div className="lg:hidden flex items-center justify-between w-full lg:w-max gap-x-3">
-        <Button size="lg" className="uppercase bg-brandColor text-white hover:bg-brandColor hover:opacity-90">
+        <ReviewModal className="uppercase font-medium text-sm px-6 py-3 rounded-md bg-brandColor text-white hover:bg-brandColor hover:opacity-90">
           Leave A Review
-        </Button>
+        </ReviewModal>
         <div className="flex items-center gap-x-3">
           <Button size="icon" variant="outline" className="border-brandColor">
             <Bookmark className="text-brandColor w-4 h-4" />

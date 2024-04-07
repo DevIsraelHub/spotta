@@ -91,6 +91,30 @@
     body {
       @apply bg-background text-foreground;
     }
+    .container {
+      @apply relative w-80 min-h-6 border border-gray-400 flex items-center gap-2 p-2 rounded-sm outline-none focus-within:ring-2 focus-within:ring-primary;
+    }
+    .value {
+      @apply flex-grow flex gap-2 flex-wrap;
+    }
+    .clear-btn {
+      @apply bg-transparent text-gray-700 border-none outline-none cursor-pointer p-0 text-lg;
+    }
+    .caret {
+      @apply translate-x-0 translate-y-[25px] border-t-2 border-gray-700;
+    }
+    .options {
+      @apply absolute m-0 p-0 list-none hidden max-h-[15px] overflow-y-auto border border-gray-400 rounded-sm w-full left-0 top-1/4 bg-white z-10;
+    }
+    .divider {
+      @apply bg-gray-700 self-stretch w-[".05em"];
+    }
+    .option {
+      @apply p-[0.25em] p-[0.5em] cursor-pointer;
+    }
+    .option-badge {
+      @apply flex items-center border border-gray-400 rounded-sm p-[0.25em] gap-[0.25em] cursor-pointer bg-transparent outline-none
+    }
   }
 
   

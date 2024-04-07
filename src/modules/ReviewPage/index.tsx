@@ -14,7 +14,7 @@ const ReviewPage = () => {
           <ReviewCard key={index} />
         ))}
       </div>
-      <div className="w-full mb-4 lg:w-[40%] lg:grid grid-cols-2 bg-red-300 grid-rows-2 gap-4 -ml-auto">
+      <div className="w-full mb-4 lg:w-[40%] lg:grid grid-cols-2 grid-rows-2 gap-4 -ml-auto">
         {
           gridImages.map((image, index) => (
             <div className="relative w-full h-full overflow-hidden group cursor-pointer rounded-lg">

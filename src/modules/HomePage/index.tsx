@@ -22,7 +22,7 @@ const HomePage = () => {
           <span className="absolute z-50 top-0 left-0 w-full h-20 bg-gradient-to-b from-brandBg to-transparent"></span>
           <ReviewCardCarousel />
           <div className="hidden xl:block">
-            <ReviewCardCarousel animation="animate-loop-reverse-scroll" />
+            <ReviewCardCarousel />
           </div>
           <span className="absolute z-50 bottom-[10%] left-0 w-full h-20 bg-gradient-to-b from-transparent to-brandBg"></span>
         </div>
