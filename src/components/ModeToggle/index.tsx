@@ -31,9 +31,6 @@ export function ModeToggle() {
         <DropdownMenuItem className="cursor-pointer py-3 px-4 dark:hover:bg-sccent" onClick={() => setTheme("dark")}>
           <Moon className="w-4 h-4 mr-3" />Dark
         </DropdownMenuItem>
-        <DropdownMenuItem className="cursor-pointer py-3 px-4 dark:hover:bg-sccent" onClick={() => setTheme("system")}>
-          <Laptop2 className="w-4 h-4 mr-3" />System
-        </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   )
