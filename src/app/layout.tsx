@@ -21,7 +21,7 @@ export default function RootLayout({
       <body className={`${inter.className} bg-brandBg`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >
