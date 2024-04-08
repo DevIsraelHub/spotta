@@ -24,7 +24,7 @@ const Header = () => {
         <div className="space-y-3">
           <h2 className="text-brandText text-xl md:text-2xl font-medium">Bonny and Clyde Street, Ajao Estate, Lagos</h2>
           <p className="text-brandText text-sm md:text-[16px]">
-            <b>"450" Reviews</b> (People are raving about the selected location)</p>
+            <b>&quot;450&quot; Reviews</b> (People are raving about the selected location)</p>
         </div>
         <div className="hidden lg:flex items-center justify-between w-full lg:w-max gap-x-3">
           <ReviewModal className="uppercase font-medium text-sm px-6 py-3 rounded-md bg-brandColor text-white hover:bg-brandColor hover:opacity-90">
