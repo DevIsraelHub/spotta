@@ -6,14 +6,14 @@ import { getFirestore } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: process.env.NEXT_APP_KEY,
-  authDomain: process.env.NEXT_APP_AUTH_DOMAIN,
-  projectId: process.env.NEXT_APP_PROJECT_ID,
-  storageBucket: process.env.NEXT_APP_STORAGE_BUCKET,
-  messagingSenderId: process.env.NEXT_APP_MESSAGEING_SENDER_ID,
-  appId: process.env.NEXT_APP_APP_ID
+  apiKey: "AIzaSyBZyOGfrPCUgLyWvabG_obRSAugCjQyvEg",
+  authDomain: "spotta-6aa03.firebaseapp.com",
+  projectId: "spotta-6aa03",
+  storageBucket: "spotta-6aa03.appspot.com",
+  messagingSenderId: "198962450798",
+  appId: "1:198962450798:web:e37790ebd2eaee24ddf17f"
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app)
+export const app = initializeApp(firebaseConfig);
+export const db = getFirestore(app)

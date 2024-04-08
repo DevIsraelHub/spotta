@@ -6,7 +6,7 @@ import { Input } from "../ui/input"
 const Comment = () => {
   return (
     <>
-      <div className="w-full h-full -mt-3 flex items-center gap-x-2">
+      <div className="w-full h-full pb-3 -mt-3 flex items-center gap-x-2">
         <Input
           type="text"
           placeholder="Add a comment"
@@ -18,7 +18,7 @@ const Comment = () => {
           Post
         </Button>
       </div>
-      <Separator className="mt-3 mb-6" />
+      <Separator />
     </>
   )
 }

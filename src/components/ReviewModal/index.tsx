@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import {
   Dialog,
   DialogClose,
@@ -17,29 +17,42 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea"
+import Swal from "sweetalert2";
 
 import { StarIcon } from "lucide-react";
 import { Label } from "../ui/label";
 import { Checkbox } from "../ui/checkbox";
 import { Button } from "../ui/button";
 import { places } from "@/constants";
+import { ReviewProp } from "@/types";
+import { addDoc, collection } from "firebase/firestore";
+import { db } from "@/config/firbase";
 
 const ReviewModal = ({ children, className }: {
   children: React.ReactNode;
   className?: string;
 }) => {
 
-  const [bodyText, setBodyText] = useState("");
-  const [disabled, setDisabled] = useState(true);
+  const [body, setBody] = useState("");
 
-  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setBodyText(e.target.value)
-    if (bodyText.length > 0) {
-      setDisabled(false)
-    } return
+  const addSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    if (body !== "") {
+      await addDoc(collection(db, "reviews"), {
+        body,
+      });
+      setBody("");
+      Swal.fire({
+        icon: 'success',
+        text: 'Review Submitted!',
+        showConfirmButton: false,
+        timer: 2000,
+      });
+    }
   }
 
   return (
+
     <Dialog>
       <DialogTrigger className={`${className}`}>
         {children}
@@ -84,35 +97,41 @@ const ReviewModal = ({ children, className }: {
             ))}
           </div>
         </div>
-        <div className="w-full space-y-4">
-          <Label htmlFor="message">Write Review</Label>
-          <Textarea
-            onClick={() => handleChange}
-            className="min-h-[200px] max-h-[400px] bg-brandBg dark:border-slate-500" placeholder="Placeholder."
-            id="message"
-          />
-          <div className="flex items-center space-x-2">
-            <Checkbox id="terms" />
-            <label
-              htmlFor="terms"
-              className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-brandTextDull cursor-pointer"
-            >
-              Post as anonymous
-            </label>
+        <form
+          onSubmit={addSubmit}
+          className="flex flex-col w-full h-full space-y-8">
+          <div className="w-full space-y-4">
+            <Label htmlFor="message">Write Review</Label>
+            <Textarea
+              value={body}
+              onChange={(e) => setBody(e.target.value)}
+              className="min-h-[200px] max-h-[400px] bg-brandBg dark:border-slate-500" placeholder="Placeholder."
+              id="message"
+            />
+            <div className="flex items-center space-x-2">
+              <Checkbox id="terms" />
+              <label
+                htmlFor="terms"
+                className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-brandTextDull cursor-pointer"
+              >
+                Post as anonymous
+              </label>
+            </div>
           </div>
-        </div>
-        <div className="w-full flex items-center gap-x-5 mt-2">
-          <Button
-            size="lg"
-            disabled={disabled}
-            className="uppercase text-lg w-full bg-brandColor text-white h-14 hover:bg-brandColor"
-          >
-            Submit
-          </Button>
-          <DialogClose className="text-lg w-full border rounded-md h-14 hover:bg-accent uppercase border-brandColor text-brandColor hover:text-brandColor bg-brandBg">
-            Cancel
-          </DialogClose>
-        </div>
+          <div className="w-full flex items-center gap-x-5 mt-2">
+            <DialogClose disabled={!body} className="w-full">
+              <Button
+                disabled={!body}
+                className="uppercase rounded-md text-lg w-full bg-brandColor text-white h-12 md:h-14 hover:bg-brandColor"
+              >
+                Submit
+              </Button>
+            </DialogClose>
+            <DialogClose className="text-lg w-full border rounded-md h-12 md:h-14 hover:bg-accent uppercase border-brandColor text-brandColor hover:text-brandColor bg-brandBg">
+              Cancel
+            </DialogClose>
+          </div>
+        </form>
       </DialogContent>
     </Dialog>
   )

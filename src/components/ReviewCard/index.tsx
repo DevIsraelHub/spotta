@@ -6,14 +6,17 @@ import {
 } from "@/components/ui/avatar";
 import { Separator } from "@/components/ui/separator"
 import { MessageSquare, StarIcon, ThumbsDown, ThumbsUp } from "lucide-react";
+import Comment from "../Comment";
+import { ReviewProp } from "@/types";
 
-const ReviewCard = () => {
+const ReviewCard = ({ review, i }: ReviewProp) => {
+
   return (
-    <div className="w-full">
+    <div className="w-full mb-6">
       <div className="flex items-center justify-between">
         <div className="flex items-center justify-start gap-x-2">
           <Avatar className="w-8 h-8">
-            <AvatarImage src="/images/reviewerProfile.png" alt="Reviewer Profile Image" />
+            <AvatarImage className="object-cover" src={review?.profile} alt="Reviewer Profile Image" />
             <AvatarFallback>JT</AvatarFallback>
           </Avatar>
           <h2 className="mr-1 text-sm text-brandText font-medium">James T.</h2>
@@ -27,7 +30,7 @@ const ReviewCard = () => {
         </div>
       </div>
       <p className="text-brandText tex-[16px] my-4">
-        There is no stable electricity. The roads are fairly good and there is a sense of community. The drainage system is poor and most residents litter their surroundings. There are several grocery stores and Supermarkets.
+        {review?.body}
       </p>
       <div className="flex items-center gap gap-x-6">
         <span className="flex items-center gap-x-1 cursor-pointer p-1 px-2 hover:bg-accent rounded-full transition-all">
@@ -44,6 +47,7 @@ const ReviewCard = () => {
         </span>
       </div>
       <Separator className="my-6" />
+      {i === 0 && < Comment />}
     </div>
   )
 }

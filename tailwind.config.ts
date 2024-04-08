@@ -98,14 +98,9 @@ const config = {
           from: { transform: "translateY(0)" },
           to: { transform: "translateY(-100%)" }
         },
-        "loop-reverse-scroll": {
-          from: { transform: "translateY(-100%)" },
-          to: { transform: "translateY(0)" }
-        }
       },
       animation: {
         "loop-scroll": "loop-scroll 5s linear infinite",
-        "loop-reverse-scroll": "loop-scroll 5s linear infinite",
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
