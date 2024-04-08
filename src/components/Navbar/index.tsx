@@ -10,8 +10,11 @@ const Navbar = () => {
 
   return (
     <nav className="flex items-center mx-auto bg-transparent justify-between w-full min-h-[70px] px-4 md:px-6 lg:px-12 max-w-[1400px]">
-      <Link href="/" as={"/"}>
-        <Logo w="120" h="50" />
+      <Link href="/" as={"/"} className="uppercase flex items-center font-black text-sm brandText tracking-[8px]">
+        <h2>spotta</h2>
+        <span className="-ml-[90px]">
+          <Logo w="120" h="50" />
+        </span>
       </Link>
       {
         !isLoggedIn && (
