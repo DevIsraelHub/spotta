@@ -4,6 +4,8 @@ import { gridImages, reviewCards } from "@/constants"
 import { ArrowRight } from "lucide-react"
 import React from 'react'
 
+import { collection, getDocs } from "firebase/firestore"
+
 const ReviewPage = () => {
   return (
     <div className="w-full flex flex-col-reverse lg:flex-row items-end lg:items-start justify-between space-x-10">

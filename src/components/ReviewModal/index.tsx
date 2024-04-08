@@ -29,6 +29,16 @@ const ReviewModal = ({ children, className }: {
   className?: string;
 }) => {
 
+  const [bodyText, setBodyText] = useState("");
+  const [disabled, setDisabled] = useState(true);
+
+  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setBodyText(e.target.value)
+    if (bodyText.length > 0) {
+      setDisabled(false)
+    } return
+  }
+
   return (
     <Dialog>
       <DialogTrigger className={`${className}`}>
@@ -76,7 +86,11 @@ const ReviewModal = ({ children, className }: {
         </div>
         <div className="w-full space-y-4">
           <Label htmlFor="message">Write Review</Label>
-          <Textarea className="min-h-[200px] max-h-[400px] bg-brandBg dark:border-slate-500" placeholder="Placeholder." id="message" />
+          <Textarea
+            onClick={() => handleChange}
+            className="min-h-[200px] max-h-[400px] bg-brandBg dark:border-slate-500" placeholder="Placeholder."
+            id="message"
+          />
           <div className="flex items-center space-x-2">
             <Checkbox id="terms" />
             <label
@@ -90,6 +104,7 @@ const ReviewModal = ({ children, className }: {
         <div className="w-full flex items-center gap-x-5 mt-2">
           <Button
             size="lg"
+            disabled={disabled}
             className="uppercase text-lg w-full bg-brandColor text-white h-14 hover:bg-brandColor"
           >
             Submit
