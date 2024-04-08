@@ -18,7 +18,7 @@ const HomePage = () => {
           </p>
           <HomeSearchbar />
         </div>
-        <div className="relative h-full w-full flex justify-end max-h-screen space-x-0 lg:w-[50%] float-right ml-4">
+        <div className="relative h-full w-full flex justify-end max-h-screen space-x-0 lg:w-[50%] float-right lg:ml-4">
           <span className="absolute z-50 top-0 left-0 w-full h-20 bg-gradient-to-b from-brandBg to-transparent"></span>
           <div className="w-full hidden xl:block">
             <ReviewCardCarousel />
