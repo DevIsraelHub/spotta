@@ -1,5 +1,5 @@
 
-import HomePage from "@/modules/HomePage";
+import HomePage from "@/modules/HomePage"
 
 const Home = () => {
   return (
