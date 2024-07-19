@@ -1,9 +1,9 @@
-import React from 'react'
-import Logo from "@/components/Logo"
-import Link from "next/link"
-import Searchbar from "@/components/Searchbar"
-import UserButton from "../UserButton"
-import { ModeToggle } from "../ModeToggle"
+import React from 'react';
+import Logo from "@/components/Logo";
+import Link from "next/link";
+import Searchbar from "@/components/Searchbar";
+import UserButton from "../UserButton";
+import { ModeToggle } from "../ModeToggle";
 
 const Navbar = () => {
   const isLoggedIn = false;
